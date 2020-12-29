@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+# Dynamic Programming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dynamic programming is a technique for solving problems composed of overlapping sub-problems. Instead of solving every possible subproblem from scratch, you instead start with the simplest and then use the answer of that problem to determine the next, and then the answer from that subproblem to solve the next etc... until the overall problem has been answered. This requires that the answer to any subproblem is some function of its predecessors or neighboring sub-problems. The results to sub-problems are recorded in a table as you go and then answers can be derived from the table.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Maximum Sum Descent
 
-### `npm start`
+Given a number pyramid with N tiers, find the path from top to bottom with the greatest sum of values. Each tier in the pyramid has one more value than the tier above it. The Nth row has N values.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The path must consist of only adjacent numbers. The ith value in tier t can go to the ith or i+1th value in tier t+1.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To solve this, we will record for each node in pyramid, the greatest sum that can be found from the tip of the pyramid to that node. In order to avoid re-calculating values for every possible poth, we must note that the maximum sum for a path to a given node in the pyramid is equal to the maximum of the greatest sum of either of its parents plus its own value. Thus we can simply update the answers for each node based on its parents.
