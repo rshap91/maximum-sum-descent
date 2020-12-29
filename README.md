@@ -1,3 +1,5 @@
+Run `npm install` and `npm start`
+
 # Dynamic Programming
 
 Dynamic programming is a technique for solving problems composed of overlapping sub-problems. Instead of solving every possible subproblem from scratch, you instead start with the simplest and then use the answer of that problem to determine the next, and then the answer from that subproblem to solve the next etc... until the overall problem has been answered. This requires that the answer to any subproblem is some function of its predecessors or neighboring sub-problems. The results to sub-problems are recorded in a table as you go and then answers can be derived from the table.
