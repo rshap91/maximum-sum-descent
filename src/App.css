@@ -13,3 +13,16 @@
   font-size: x-large;
   margin: 2em;
 }
+
+#pyramids {
+  display: flex;
+  justify-content: space-around;
+}
+
+#numberPyramid {
+  flex-basis: 50%;
+}
+
+#explanationText {
+  padding: 2em;
+}

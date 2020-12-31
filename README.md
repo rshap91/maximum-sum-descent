@@ -21,6 +21,6 @@ Finding the maximum sum from the tip of the pyramid to the second tier is trivia
 
 Record the answers in an answer table for each node in the 2nd tier and then determine the answers for each node in the third tier by selecting the greatest value from each nodes direct parent, then add the nodes value.
 
-If the node only has 1 parent, which is the case for any nodes lying on the outside edges of the pyramid (furthest left or furthest right), then the the maximum sum will be the maximum sum for the parent plus the value of the node. Reference the recorded answers in the answer table to deterimine the maximum sum of the parent nodes.
+If the node only has 1 parent, which is the case for any nodes lying on the outside edges of the pyramid (furthest left or furthest right), then the maximum sum will be the maximum sum for the parent plus the value of the node. Reference the recorded answers in the answer table to deterimine the maximum sum of the parent nodes.
 
 Continue this process for every node in the pyramid. The final answer is the largest value in the last row of the answer table.
